@@ -19,8 +19,7 @@
     <div class="container pl-0 pr-0">
         <br /> <br />
         <div class="container-fluid">
-        <h3><a href="http://labs.cd2h.org:5000/graphiql">Postgraphile Interface to CD2H data</a></h3>
-        <p><b>Note:</b> we are still working on wrapping the Postgraphile interface with the standard CD2H Labs look and feel.</p>
+        <h3><a href="graphiql.jsp">Postgraphile Interface to CD2H data</a></h3>
         <p>Try the following query, which walks the list of projects, returning the title, thematic area and persons involved for each project.</p>
 <sql:query var="domains" dataSource="jdbc/labs">
     select name,service,description,query from graphql.query;
