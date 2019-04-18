@@ -39,6 +39,16 @@
 								<li><a href="postgraphile/graphiql.jsp">GraphIQL user interface</a></li>
 								<li><a href="postgraphile/query_list.jsp">CD2H Query Examples</a></li>
 								<li><a href="postgraphile/warehouse.jsp">Schema Explorer</a></li>
+								<li>
+								<c:choose>
+								<c:when test="${empty guid}">
+								    <a href="http://guardian.slis.uiowa.edu:8080/scits/login.jsp">Login</a> <i>(Note! This warps you around labs.cd2h.org to the underlying Tomcat container.)</i>
+								</c:when>
+								<c:otherwise>
+								    User: ${guid} [<a href="logout.jsp">logout</a>]
+								</c:otherwise>
+								</c:choose>
+								</li>
 							</ul>
 						</div>
 					</div>

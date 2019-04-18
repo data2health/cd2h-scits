@@ -29,6 +29,8 @@ WebContent/images/person_icon.png -text svneol=unset#image/png
 WebContent/images/tile_background4.png -text svneol=unset#image/png
 WebContent/index.jsp -text
 WebContent/local_nav.jsp -text
+WebContent/login.jsp -text
+WebContent/logout.jsp -text
 WebContent/postgraphile/graphiql.jsp -text
 WebContent/postgraphile/guardian_graphiql.jsp -text
 WebContent/postgraphile/query_list.jsp -text
