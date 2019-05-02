@@ -33,6 +33,7 @@ WebContent/login.jsp -text
 WebContent/logout.jsp -text
 WebContent/postgraphile/graphiql.jsp -text
 WebContent/postgraphile/guardian_graphiql.jsp -text
+WebContent/postgraphile/query_edit.jsp -text
 WebContent/postgraphile/query_list.jsp -text
 WebContent/postgraphile/warehouse.jsp -text
 WebContent/resources/cd2h -text

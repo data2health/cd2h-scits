@@ -15,6 +15,9 @@
         <dependent-module archiveName="JSONTagLib-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/JSONTagLib/JSONTagLib">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="UtilTagLib-1.0.4-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/UtilTagLib/UtilTagLib">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="cd2h-scits"/>
         <property name="java-output-path" value="/cd2h-scits/build/classes"/>
     </wb-module>

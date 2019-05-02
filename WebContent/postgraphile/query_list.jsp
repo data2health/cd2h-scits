@@ -22,13 +22,13 @@
         <h3><a href="graphiql.jsp">Postgraphile Interface to CD2H data</a></h3>
         <p>Try the following query, which walks the list of projects, returning the title, thematic area and persons involved for each project.</p>
 <sql:query var="domains" dataSource="jdbc/labs">
-    select name,service,description,query from graphql.query;
+    select name,service,description,query from graphql.query order by service,name;
 </sql:query>
 
     <table>
     <tr><th>Name</th><th>Server</th><th>Description</th><th>Query</th></tr>
     <c:forEach items="${domains.rows}" var="row" varStatus="rowCounter">
-        <tr><td>${row.name}</td><td>${row.service}</td><td>${row.description}</td><td><pre>${row.query}</pre></td></tr>
+        <tr><td><a href="query_edit.jsp?name=${row.name}">${row.name}</a></td><td>${row.service}</td><td>${row.description}</td><td><pre>${row.query}</pre></td></tr>
     </c:forEach>
     </table>
         <p><i>More documentation coming soon!</i></p>

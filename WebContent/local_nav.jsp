@@ -5,6 +5,7 @@
           Projects
         </a>
         <div class="dropdown-menu" aria-haspopup="true" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="http://labs.cd2h.org/scits">CD2H SciTS Project</a>
           <a class="dropdown-item" href="http://labs.cd2h.org/analytics/cd2h/dashboard.jsp">CD2H Dashboard</a>
           <a class="dropdown-item" href="http://labs.cd2h.org/search/facetSearch.jsp">CTSAsearch</a>
         </div>
