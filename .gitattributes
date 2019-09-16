@@ -10,9 +10,13 @@
 .settings/org.eclipse.wst.jsdt.ui.superType.name -text
 .settings/org.eclipse.wst.validation.prefs -text
 WebContent/META-INF/MANIFEST.MF -text
+WebContent/apis.jsp -text
 WebContent/footer.jsp -text
 WebContent/head.jsp -text
 WebContent/header.jsp -text
+WebContent/images/SciTS.jpg -text svneol=unset#image/jpeg
+WebContent/images/SciTS.png -text svneol=unset#image/png
+WebContent/images/SciTS.svg -text svneol=unset#application/xml
 WebContent/images/bullet-l1.gif -text svneol=unset#image/gif
 WebContent/images/cd2h_honeycomb.png -text svneol=unset#image/png
 WebContent/images/cd2h_invent.png -text svneol=unset#image/png

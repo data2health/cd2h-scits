@@ -24,8 +24,8 @@
 
 	<div class="container pl-0 pr-0">
 		<div class="container-fluid mt-4">
-            <h1>CD2H Science of Translational Science (SciTS) Platform</h1>
-		  <img alt="SciTS conceptual architecture" src="images/SciTS.jpg" width=100%>
+			<h1>CD2H SciTS APIs</h1>
+			<hr>
 			<h4 style="text-align: center; font-weight: 400;">
 				<i style="color: #6ba097;" class="fas fa-server"></i> Current Prototypes from Our Teams and Our Collaborators Include:
 			</h4>
@@ -34,18 +34,24 @@
 				<div class="col-sm-6">
 					<div class="card">
 						<div class="card-body">
-							<h5 class="card-title"><a href="http://labs.cd2h.org/search">CTSAsearch</a></h5>
-							<p">Query SciTS data and use the resulting data in your local environment.</p>
+							<h5 class="card-title">PostGraphile</h5>
+							<ul class="list-group">
+								<li><a href="postgraphile/graphiql.jsp">GraphIQL user interface</a></li>
+								<li><a href="postgraphile/query_list.jsp">CD2H Query Examples</a></li>
+								<li><a href="postgraphile/warehouse.jsp">Schema Explorer</a></li>
+								<li>
+								<c:choose>
+								<c:when test="${empty guid}">
+								    <a href="http://guardian.slis.uiowa.edu:8080/scits/login.jsp">Login</a> <i>(Note! This warps you around labs.cd2h.org to the underlying Tomcat container.)</i>
+								</c:when>
+								<c:otherwise>
+								    User: ${guid} [<a href="logout.jsp">logout</a>]
+								</c:otherwise>
+								</c:choose>
+								</li>
+							</ul>
 						</div>
 					</div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="apis.jsp">SciTS APIs</a></h5>
-                            <p">Query SciTS data and use the resulting data in your local environment.</p>
-                        </div>
-                    </div>
 				</div>
 			</div>
 		</div>
