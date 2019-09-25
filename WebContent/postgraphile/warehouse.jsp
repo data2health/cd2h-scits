@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <jsp:include page="../head.jsp" flush="true">
-	<jsp:param name="title" value="CD2H SciTS" />
+	<jsp:param name="title" value="SciTS API" />
 </jsp:include>
 <style type="text/css" media="all">
 @import "../resources/layout.css";
@@ -120,8 +120,8 @@
                 </c:when>
 			</c:choose>
 		</div>
-		<jsp:include page="../footer.jsp" flush="true" />
 	</div>
+	<jsp:include page="../footer.jsp" flush="true" />
 </body>
 
 </html>

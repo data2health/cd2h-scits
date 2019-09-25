@@ -3,6 +3,7 @@
 <%@ taglib prefix="fn" uri = "http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <%@ taglib prefix="util" uri="http://icts.uiowa.edu/tagUtil"%>
+
 <c:if test="${empty guid and not pageContext.request.remoteHost == '0:0:0:0:0:0:0:1'}">
         <c:redirect url="query_list.jsp" />
 </c:if>
@@ -11,7 +12,7 @@
 		<!DOCTYPE html>
 		<html lang="en-US">
 <jsp:include page="../head.jsp" flush="true">
-	<jsp:param name="title" value="CD2H API" />
+	<jsp:param name="title" value="SciTS API" />
 </jsp:include>
 <style type="text/css" media="all">
 @import "../resources/layout.css";

@@ -4,33 +4,40 @@
 /************************/
 /*  Content */
 /************************/
+
 body, img, h1, h2, h3, h4, h5, h6, ul, li, p, a, form {
 	margin: 0;
 	padding: 0;
 	border: none;
 }
-body {
+
+body{
     background-color:white;
 	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"
-	line-height: 2em;
-	color: #414b56;
-	font-size: 12pt;
-}
-h2 {
-	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"
 	margin: 20px 0;
+	line-height: 1.5em;
+	color: #2e3338;
+	font-size: 1rem;
+	height: auto;
+	overscroll-behavior: none;
+}
+
+h2 {
 	font-size: 1.75em;
 	font-weight:450; 
 }
 h3 {
-	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"
-	margin: 20px 0;
 	font-size: 1.25em;
 }
-p {
+p{
 	padding: 0 30px 10px 0;
-	font-weight:lighter
+	font-weight:lighter;
 }
+
+.small-space p{
+	line-height: 1.2em;
+}
+
 ul {
 	padding-left: 50px;
 }
@@ -43,7 +50,7 @@ a {
 	color: #317ab2;
 }
 a:hover {
-	background-color: #EAEAEA;
+	background-color: transparent;
 }
 
 .accent{
@@ -119,7 +126,6 @@ a:hover {
   border:none; 
 }
 
-
 /************************/
 /* Lists */
 /************************/
@@ -136,73 +142,27 @@ a:hover {
 ul > li {
     margin-left: 30px;
 }
-
-/************************/
-/* General DIVS*/
-/************************/
-
-#roof {
-	background: #000000 url(../images/bg-top.png) repeat-x;
-	height: 24px;
-	text-align: right;
-	padding-right: 75px;
-	margin: 0 auto;
-}
-#roof a {
-	margin: 0 auto;
-}
-#roof a:hover {
-	background: none;
-}
-
-#local_fieldset {
-	display: block;
-    margin-left: 2px;
-    margin-right: 2px;
-    padding-top: 0.35em;
-    padding-bottom: 0.625em;
-    padding-left: 0.75em;
-    padding-right: 0.75em;
-	border: 2px groove (internal value);
-	border-width: thin;
-	}
-}
-
     
 /************************/
 /* Footer */
 /************************/
 
-#footer {
-    text-align:center;
-    width=100%;
+.footer{
+	margin-top: 20px;
+    text-align: center;
+    width: 100%;
     padding:20px 0px 0px 0px;
- 	bottom:0; 
+ 	background-image: linear-gradient(to bottom right, #2f3336, black);
 }
 
-#contentBlock {
-    height: 100%;
-	width: 100%;
-    float: left;
-    padding: 0px 10px 0px 0px;
-}
-
-#contentBlock2 {
-    height: 100%;
-    width: 50%;
-    float: left;
-    padding: 0px 10px 0px 0px;
-}
-
-
-.foot li a:hover{
+.foot li a:hover {
 	background:transparent;
 	text-decoration: underline;
 }
 
 .foot-logos a:hover{
 	background:transparent;
-	transform: scale(1.01);
+	transform: scale(1.05);
 }
 
 /************************/
@@ -231,8 +191,7 @@ ul > li {
 }
 
 /*this is to keep page from shifting to left on load in safari and firefox*/
-
-html { min-height: 100%; margin-bottom: 1px; }
+html { min-height: 100%; margin-bottom: 0px; }
 
 html { overflow: -moz-scrollbars-vertical !important; }
 
@@ -390,6 +349,20 @@ table a {
 	padding: 1.1rem .8rem;
 }
 
+.accent_card .list-group-item p{
+	padding: 0 23px 10px 0;
+}
+
+.accent_card .external{
+	background-image: url('../images/tile_background_external.png');
+	background-repeat: no-repeat;
+  	background-size: 100% 100%;
+	color:#eff2f7;
+	border-color: white;
+	height: 200px;
+	padding: 1.1rem .8rem;
+}
+
 .accent_card .list-group-item:hover{
 	border:0px;
 	transform: scale(1.01);
@@ -412,17 +385,12 @@ table a {
 /* Navigation Bar */
 /************************/
 
-#labs_image {
-	height: 70px;
-	width: 110px;
-	background: url('../images/logo_sprite.png') -330px 0px;
-}
-
 navbar-toggler {
-  background-color: #393f4d!important;
+  background-color: transparent!important;
  }
 .bg-dark {
-    background-color: #393f4d!important;
+    background-color: transparent!important;
+    background-image: linear-gradient(to bottom right, #2f3336, black);
 }
 .navbar-nav .show>.nav-link {
     color: white;
@@ -432,7 +400,12 @@ navbar-toggler {
 }
 
 .navbar a:hover{
-	background-color:  #393f4d!important;
+	background-color:  transparent!important;
+}
+
+.navbar a:focus {
+    background-color: transparent!important;
+    color: white!important;
 }
 
 navbar-dark .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link {
@@ -440,9 +413,12 @@ navbar-dark .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.a
     outline: 0;
 }
 
-
 nav .dropdown-item:hover{
-	color:#c9dee5;
+	color:#c0c1c4;
+}
+
+.navbar-nav{
+	margin-top: 8px;
 }
 
 nav,
@@ -451,20 +427,38 @@ nav ul,
 nav li,
 nav ul li,
 .dropdown-menu{
-  background-color:  #393f4d;
+  background-color:  transparent;
   text-transform: uppercase;
   width: 100!important;
   color:white;
   border:none;
+  font-family: "Benton Sans Book",Helvetica,sans-serif;
 }
+
+.dropdown-menu{
+  text-transform: uppercase;
+  background-color:black;
+  width: 100!important;
+  color:white;
+  border:none;
+  font-family: "Benton Sans Book",Helvetica,sans-serif;
+}
+
+@media only screen and (max-width: 992px) {
+	.dropdown-menu {
+		background-color:transparent !important;
+	} 
+}
+
 .dropdown-item{
 	color:white;
 }
 
 nav .navbar-brand{
-    background-color: #393f4d;
+    background-color: transparent;
     text-transform: uppercase;
 } 
+
 
 #logo-span{
 	margin-left:3%;
@@ -484,11 +478,11 @@ nav .card-header {
 
 nav .card{
 	border:0px;
-	background-color: #393f4d;
+	background-color: black;
 }
 
 nav .card-header a:visited, nav .card-header a:hover  {
-	background-color: #393f4d;
+	background-color: transparent;
 	color:white;
 }
 

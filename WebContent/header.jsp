@@ -2,7 +2,7 @@
 
 <div id="logo-span">
 <a href="https://ctsa.ncats.nih.gov/cd2h/"><img width="500" height="500"
-   src="https://ctsa.ncats.nih.gov/cd2h/wp-content/uploads/sites/7/2018/10/site_logo-768x229.png"
+   src="https://raw.githubusercontent.com/data2health/admin/master/cd2h-logos/CD2H_logo_black%20banner.png"
    class="image wp-image-15  attachment-full size-full" alt=""
    style="max-width: 10%; height: auto;"/></a>
    
@@ -13,23 +13,46 @@
 						style="max-width: 15%; height: auto;" /></a>
    
 <a href="https://ncats.nih.gov/"><img width="500"
-						height="500"
+						height=5300"
 						src="https://ctsa.ncats.nih.gov/cd2h/wp-content/uploads/sites/7/2018/10/NIHlogo-300x69.png"
 						class="image wp-image-15  attachment-full size-full" alt=""
-						style="max-width: 15%; height: auto;"/></a>
+						style="max-width: 10%; height: auto;"/></a>
 
 </div>
                         
                         
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark pt-0 pb-1">
-  <a id="labs_image" onmouseover="animateScript()" onmouseout="stopanimate()" class="navbar-brand" href="http://labs.cd2h.org" title="Labs Home"></a>
+  <a id="labs_image" class="navbar-brand" href="http://labs.cd2h.org/scits/" title="Labs Home"><img style="height:30px;" src="<util:applicationRoot/>/images/header_logo.png"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
-      <jsp:include page="local_nav.jsp"/>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Tools
+        </a>
+        <div class="dropdown-menu" aria-haspopup="true" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="http://labs.cd2h.org/search/">CTSAsearch</a>
+          <a class="dropdown-item" href="http://labs.cd2h.org/gitforager/">gitForager</a>
+          <a class="dropdown-item" href="http://labs.cd2h.org/analytics/incite/browse.jsp">CTSA Web Search</a>
+          <a class="dropdown-item" href="http://labs.cd2h.org/scits/apis.jsp">SciTS APIs</a>
+          <a class="dropdown-item" href="<util:applicationRoot/>/tableau/tableau.jsp">Tableau Integration</a>
+          <a class="dropdown-item" href="http://labs.cd2h.org/viva/">Viva</a>
+          <a class="dropdown-item" href="http://labs.cd2h.org/acknowledgments/">Acknowledgements</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Partners
+        </a>
+        <div class="dropdown-menu" aria-haspopup="true" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="https://ncats.nih.gov/translation/maps">NCATS 4D Map</a>
+          <a class="dropdown-item" href="https://github.com/data2health/CTS-Personas">CD2H Personas</a>
+          <a class="dropdown-item" href="https://github.com/data2health/rdp-portal">CD2H RDP-Portal</a>
+        </div>
+      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Coordinating Centers
@@ -39,6 +62,7 @@
           <a class="dropdown-item" href="https://clic-ctsa.org/">CLIC</a>
         </div>
       </li>
+      <jsp:include page="local_nav.jsp"/>
     </ul>
   </div>
 </nav>
@@ -65,9 +89,11 @@ function animateScript() {
 		document.getElementById("labs_image").style.backgroundPosition = "-" + position + "px 0px"; 
 		console.log("-" + position + "px 0px");
 		if (position < 330)
-			{ position = position + diff;}
-		else
-			{ position = 0; }
+			{ position = position + diff;
+		}else{ 
+			position = 330;
+			stopanimate();
+			}
 	}, interval ); 
 } 
 

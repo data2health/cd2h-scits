@@ -21,6 +21,10 @@ WebContent/images/bullet-l1.gif -text svneol=unset#image/gif
 WebContent/images/cd2h_honeycomb.png -text svneol=unset#image/png
 WebContent/images/cd2h_invent.png -text svneol=unset#image/png
 WebContent/images/ctsa-g-logo.jpg -text svneol=unset#image/jpeg
+WebContent/images/graphql.png -text
+WebContent/images/header_logo.png -text
+WebContent/images/idemap.jpg -text
+WebContent/images/idemap.png -text
 WebContent/images/idtf_map.png -text svneol=unset#image/png
 WebContent/images/labs-logo.png -text svneol=unset#image/png
 WebContent/images/labslogo2.png -text svneol=unset#image/png
@@ -30,6 +34,11 @@ WebContent/images/masthead-hhs-logo.png -text svneol=unset#image/png
 WebContent/images/masthead-nih-logo.png -text svneol=unset#image/png
 WebContent/images/onlinelogomaker-111617-1142-7717.png -text svneol=unset#image/png
 WebContent/images/person_icon.png -text svneol=unset#image/png
+WebContent/images/scits_edu.png -text
+WebContent/images/scits_gov.png -text
+WebContent/images/scits_logo_prof.png -text
+WebContent/images/scits_redcap.png -text
+WebContent/images/scits_sparc.png -text
 WebContent/images/tile_background4.png -text svneol=unset#image/png
 WebContent/index.jsp -text
 WebContent/local_nav.jsp -text
@@ -40,9 +49,11 @@ WebContent/postgraphile/guardian_graphiql.jsp -text
 WebContent/postgraphile/query_edit.jsp -text
 WebContent/postgraphile/query_list.jsp -text
 WebContent/postgraphile/warehouse.jsp -text
+WebContent/resources/anime.min.js -text
 WebContent/resources/cd2h -text
 WebContent/resources/css -text
 WebContent/resources/d3.v3.min.js -text
+WebContent/resources/index.css -text
 WebContent/resources/jdbc_environment.jsp -text
 WebContent/resources/layout.css -text
 WebContent/resources/slick.min.css -text

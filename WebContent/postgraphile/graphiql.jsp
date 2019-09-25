@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <jsp:include page="../head.jsp" flush="true">
-    <jsp:param name="title" value="CD2H Labs" />
+    <jsp:param name="title" value="SciTS API" />
 </jsp:include>
 
 <style type="text/css" media="all">
