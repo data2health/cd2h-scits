@@ -18,7 +18,7 @@
 
 			<div class="container pl-0 pr-0 pt-3">
 				<h2>SciTS Tableau Integration</h2>
-				<p>Explore county level demographics of the CTSA Hubs and find out which Hub's characteristics best match your study's recruitment criteria.
+				<p>Explore county-level demographics of the CTSA Hubs and find out which Hub's characteristics best match your study's recruitment criteria.
 				Filter the map based on 2017 Census data, search for and highlight Hubs by name, and utilize the dropdown menu to select your detail-oriented view.
 				Hover on a node to view details and update the supplemental visualizations. Once you have a hub in mind, click to navigate to their respective website.</p>
 				<br>
