@@ -10,7 +10,7 @@
 	<jsp:param name="title" value="SciTS Tableau" />
 </jsp:include>
 <style type="text/css" media="all">
-@import "resources/layout.css";
+@import "../resources/layout.css";
 </style>
 
 <body class="home page-template-default page page-id-6 CD2H">
