@@ -14,12 +14,6 @@
 <style type="text/css" media="all">
 @import "resources/layout.css";
 
-.index-icon {
-	text-align: center;
-	color: grey;
-	opacity: 0.7;
-}
-
 .carousel-control-prev-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
 }
@@ -37,7 +31,7 @@ h3{
 	padding-bottom: 20px;
 }
 
-.ml12, .ml13, .ml14{
+#anim1, #anim2, #anim3{
   font-weight: 200;
   font-size: 1.5em;
   text-transform: uppercase;
@@ -45,7 +39,7 @@ h3{
   padding-bottom: 10px;
 }
 
-.ml12 .letter, .ml13 .letter, .ml14 .letter{
+#anim1 .letter, #anim2 .letter, #anim3 .letter{
   display: inline-block;
   line-height: 1em;
 }
@@ -78,7 +72,6 @@ h3{
 	font-size:10pt;
 }
 
-
 .heading{
 	font-weight: 500;
   	font-size: 1.5em;
@@ -90,19 +83,17 @@ p a{
 	color: #5ca4ad;
 }
 
-
-
-
 </style>
 <script src="resources/anime.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js""></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
 
 <body class="home page-template-default page page-id-6 CD2H">
 	<jsp:include page="header.jsp" flush="true" />
 
 	<div class="container pl-0 pr-0 pt-0">
 		<div class="container-fluid mt-4">
-			<img src="images/scits_logo_prof.png" class="img-fluid" alt="Responsive image" style="max-width:400px; padding-bottom:10px;"><br>
+			<img src="images/scits_logo_prof.png" class="img-fluid" alt="Scits Logo: What can we help you discover?" style="max-width:50%; padding-bottom:10px;"><br>
 			<p style="font-weight:150; font-size:11pt;">Scientific organizations expend substantial effort maintaining local databases of effectively the same data - people, publications, grants, etc.
 			The Science of Translational Science Research Platform <b>(SciTS)</b> seeks to streamline this process by performing large-scale data integration 
 			from a <a href="#data-sources">large variety of hand-curated sources</a> intended to meet your diverse information needs. Our users can query and
@@ -113,10 +104,10 @@ p a{
 	
 	<div style="background-image: linear-gradient(#fafafa, white); border-top:1px solid black; border-bottom:1px solid black;">
 		<div class="section" style="padding-bottom:0; padding-top:15px;">
-			<h3 class="ml13" style="text-align: center;">Example Use Cases:</h3>
-			<div id="carouselExampleControls" class="carousel slide p-0" data-ride="carousel">
+			<h3 id="anim1" style="text-align: center;">Example Use Cases:</h3>
+			<div id="carouselExampleControls" class="carousel slide p-0" data-ride="carousel" data-pause="hover" data-interval="18000">
 				<div class="carousel-inner">
-					<div class="carousel-item active">
+					<div class="carousel-item">
 						<img class="d-block w-75 mx-auto" src="images/scits_gov.png" alt="SciTS use case: clinical trials">
 					</div>
 					<div class="carousel-item">
@@ -142,7 +133,7 @@ p a{
 	<div class="section" id="uses_start" style="background-image: linear-gradient(to bottom right, #2f3336,#262a2e, black); padding-bottom: 30px;">
 		<div class="container pl-0 pr-0 pt-0">
 			<div class="container-fluid mt-4" style="text-align: center;">
-				<h3 class="ml12" style="color: white;">SciTS Tools:</h3>
+				<h3 id="anim2" style="color: white; opacity: 0;">SciTS Tools:</h3>
 				<div class="row justify-content-center custom_cards">
 					<div class="col-auto-4">
 						<a href="http://labs.cd2h.org/search" class="custom-card">
@@ -232,7 +223,7 @@ p a{
 	<div class="container pl-0 pr-0 pt-0" id="data-sources">
 		<div class="container-fluid mt-4">
 			<div class="section" id="sources_start">
-				<h3 class="ml14" style="text-align: center;">Data Sources:</h3>
+				<h3 id="anim3" style="text-align: center; opacity:0;">Data Sources:</h3>
 				<div style="text-align:center;">
 					<img src="images/idemap.png" style="width: 90%" class="img-fluid mx-auto" alt="data sources" >
 				</div>
@@ -245,17 +236,18 @@ p a{
 </body>
 
 <script>
-$('.carousel').carousel({
-	  interval: false
-})
+// Carousel////////////////////////////////////////////////////////////////////////
+// randomly choose which image is loaded first
+var random = Math.floor(Math.random() * 3);
+$('#carouselExampleControls > .carousel-inner').children().eq(random).addClass('active');
 
-
-var textWrapper_one = document.querySelector('.ml13');
+//Animation ///////////////////////////////////////////////////////////////////////
+// prepare and start the example use cases animation immediately 
+var textWrapper_one = document.querySelector('#anim1');
 textWrapper_one.innerHTML = textWrapper_one.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
 anime.timeline({loop: false})
 .add({
-	targets: '.ml13 .letter',
+	targets: '#anim1 .letter',
 	translateX: [40,0],
 	translateZ: 0,
 	opacity: [0,1],
@@ -263,45 +255,23 @@ anime.timeline({loop: false})
 	duration: 1600
 });
 
-
-var textWrapper_two = document.querySelector('.ml12');
+// prepare other animation elements 
+var textWrapper_two = document.querySelector('#anim2');
 textWrapper_two.innerHTML = textWrapper_two.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
-anime.timeline({loop: false})
-	.add({
-		targets: '.ml12 .letter',
-		translateX: [40,0],
-		translateZ: 0,
-		opacity: [0,0],
-		easing: "easeOutExpo",
-		duration: 0,
-		delay: (el, i) => 500 + 30 * i
-});
-
-var textWrapper_three = document.querySelector('.ml14');
+var textWrapper_three = document.querySelector('#anim3');
 textWrapper_three.innerHTML = textWrapper_three.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-anime.timeline({loop: false})
-	.add({
-		targets: '.ml14 .letter',
-		translateX: [40,0],
-		translateZ: 0,
-		opacity: [0,0],
-		easing: "easeOutExpo",
-		duration: 0,
-		delay: (el, i) => 500 + 30 * i
-});
-
-
-
+// keep track if position specific animations are run 
 var uses = 0;
 var sources = 0;
 
-function uses_animation(area){
+// run animations with opacity at 1 for position specific elements
+function animation(area){
 	if (uses == 0){
+		$('#anim2').css('opacity', 1);
 		anime.timeline({loop: false})
 			.add({
-	  		targets: '.ml12 .letter',
+	  		targets: '#anim2 .letter',
 	  		translateX: [40,0],
 	  		translateZ: 0,
 	  		opacity: [0,1],
@@ -310,9 +280,10 @@ function uses_animation(area){
 		});
 		uses += 1;
 	}else if (sources == 0){
+		$('#anim3').css('opacity', 1);
 		anime.timeline({loop: false})
 			.add({
-	  		targets: '.ml14 .letter',
+	  		targets: '#anim3 .letter',
 	  		translateX: [40,0],
 	  		translateZ: 0,
 	  		opacity: [0,1],
@@ -323,15 +294,15 @@ function uses_animation(area){
 	};
 };
 
+// run animations for last 2 headers when element on page reached && not already run 
 $(window).on('scroll', function() { 
     if (($(window).scrollTop() >= $('#uses_start').offset().top + $('#uses_start').outerHeight() - window.innerHeight) && (uses==0)){ 
-    	uses_animation('uses'); 
+    	animation('uses'); 
     };
    	if (($(window).scrollTop() >= ($('#sources_start').offset().top + $('#sources_start').outerHeight() - window.innerHeight)-200) && (sources==0)) { 
-   		uses_animation('sources'); 
+   		animation('sources'); 
    	};
 }); 
-	
 
 </script>
 </html>
