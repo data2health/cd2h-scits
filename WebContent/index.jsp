@@ -156,6 +156,16 @@ p a{
 		 				</a>
 	 				</div>
 	 				<div class="col-auto-4">
+		 				<a href="http://labs.cd2h.org/tubeForager" class="custom-card">
+		  					<div class="card">
+			    				<div class="card-body">
+			      					<h5 class="card-title">tubeForager</h5>
+			      					<p class="card-text">Browse and explore our curated list of CTSA-relevant content extracted from Youtube.<br><br></p>
+			    				</div>
+		 					</div>
+		 				</a>
+	 				</div>
+	 				<div class="col-auto-4">
 		 				<a href="http://labs.cd2h.org/analytics/incite/browse.jsp" class="custom-card">
 		  					<div class="card">
 			    				<div class="card-body">
