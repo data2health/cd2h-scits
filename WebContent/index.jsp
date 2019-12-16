@@ -160,7 +160,7 @@ p a{
 		  					<div class="card">
 			    				<div class="card-body">
 			      					<h5 class="card-title">tubeForager</h5>
-			      					<p class="card-text">Browse and explore our curated list of CTSA-relevant content extracted from Youtube.<br><br></p>
+			      					<p class="card-text">Browse and explore our curated list of CTSA-relevant content extracted from YouTube.<br><br></p>
 			    				</div>
 		 					</div>
 		 				</a>
