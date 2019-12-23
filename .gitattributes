@@ -44,8 +44,13 @@ WebContent/index.jsp -text
 WebContent/local_nav.jsp -text
 WebContent/login.jsp -text
 WebContent/logout.jsp -text
+WebContent/postgraphile/comment_schema.jsp -text
+WebContent/postgraphile/comment_table.jsp -text
 WebContent/postgraphile/graphiql.jsp -text
 WebContent/postgraphile/guardian_graphiql.jsp -text
+WebContent/postgraphile/login.jsp -text
+WebContent/postgraphile/login2.jsp -text
+WebContent/postgraphile/logout.jsp -text
 WebContent/postgraphile/query_edit.jsp -text
 WebContent/postgraphile/query_list.jsp -text
 WebContent/postgraphile/warehouse.jsp -text

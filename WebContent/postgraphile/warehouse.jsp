@@ -19,6 +19,10 @@
 	<div class="container pl-0 pr-0">
 		<br /> <br />
 		<div class="container-fluid">
+		<c:choose>
+		<c:when test="${empty login }"><a href="login.jsp">Login</a></c:when>
+		<c:otherwise><a href="logout.jsp">Logout</a></c:otherwise>
+		</c:choose>
 			<c:choose>
 				<c:when test="${empty param.schema and empty param.table }">
                     <h3>CD2H SciTS Schemas</h3>
@@ -35,17 +39,30 @@
 						<tr>
 							<th>Name</th>
 							<th>Description</th>
+                            <c:if test="${not empty login}"><th>edit?</th></c:if>
 						</tr>
 						<c:forEach items="${schemas.rows}" var="row" varStatus="rowCounter">
 							<tr>
 								<td><a href="warehouse.jsp?schema=${row.name}">${row.name}</a></td>
 								<td>${row.description}</td>
+                                <c:if test="${not empty login}"><td><a href="comment_schema.jsp?schema=${row.name}">?</a></td></c:if>
 							</tr>
 						</c:forEach>
 					</table>
 				</c:when>
                 <c:when test="${not empty param.schema and empty param.table }">
-                   <h3>CD2H SciTS Schema: ${param.schema}</h3>
+                   <h3><a href="warehouse.jsp">CD2H SciTS Schemas</a> > Schema: ${param.schema}</h3>
+                    <sql:query var="schemas" dataSource="jdbc/labs">
+                        SELECT n.nspname AS name, pg_catalog.obj_description(n.oid,'pg_namespace') AS description
+                        FROM pg_catalog.pg_namespace n
+                        WHERE
+                            n.nspname = ?
+                        ;
+                        <sql:param>${param.schema}</sql:param>
+                    </sql:query>
+                    <c:forEach items="${schemas.rows}" var="row" varStatus="rowCounter">
+                        <p>${row.description}</p>
+                    </c:forEach>
                     <sql:query var="tables" dataSource="jdbc/labs">
 						SELECT
 						    c.relname as relation,
@@ -72,6 +89,7 @@
                             <th>Relation</th>
                             <th>Size</th>
                             <th>Description</th>
+                            <c:if test="${not empty login}"><th>edit?</th></c:if>
                         </tr>
                         <c:forEach items="${tables.rows}" var="row"
                             varStatus="rowCounter">
@@ -79,12 +97,29 @@
                                 <td><a href="warehouse.jsp?schema=${param.schema}&table=${row.relation}">${row.relation}</a></td>
                                 <td>${row.size}</td>
                                 <td>${row.description}</td>
+                                <c:if test="${not empty login}"><td><a href="comment_table.jsp?schema=${param.schema}&table=${row.relation}">?</a></td></c:if>
                             </tr>
                         </c:forEach>
                     </table>
                 </c:when>
                 <c:when test="${not empty param.schema and not empty param.table }">
-                    <h3>CD2H SciTS Schema: ${param.schema} > Table: ${param.table}</h3>
+                    <h3><a href="warehouse.jsp">CD2H SciTS Schemas</a> > Schema: <a href="warehouse.jsp?schema=${param.schema}">${param.schema}</a> > Table: ${param.table}</h3>
+                     <sql:query var="tables" dataSource="jdbc/labs">
+                        SELECT
+                            c.relname as relation,
+                            pg_catalog.obj_description(c.oid, 'pg_class') as description
+                        FROM pg_catalog.pg_class c
+                        LEFT JOIN pg_catalog.pg_namespace n
+                        ON n.oid = c.relnamespace
+                        WHERE n.nspname = ?
+                          AND c.relname = ?
+                        ;
+                        <sql:param>${param.schema}</sql:param>
+                        <sql:param>${param.table}</sql:param>
+                   </sql:query>
+                     <c:forEach items="${tables.rows}" var="row" varStatus="rowCounter">
+                        <p>${row.description}</p>
+                    </c:forEach>
                     <sql:query var="columns" dataSource="jdbc/labs">
 						SELECT
 						    c.ordinal_position,
