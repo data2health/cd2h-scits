@@ -21,7 +21,7 @@
         <iframe id="graph"
             title="Inline Frame Example"
             width="100%"
-            height="500px"
+            height="650px"
             src="http://localhost:5000/graphiql">
         </iframe>
 
