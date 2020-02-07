@@ -22,7 +22,7 @@
             title="Inline Frame Example"
             width="100%"
             height="500px"
-            src="http://labs.cd2h.org:5000/graphiql">
+            src="https://labs.cd2h.org/graphiql">
         </iframe>
 
     <jsp:include page="../footer.jsp" flush="true" />
