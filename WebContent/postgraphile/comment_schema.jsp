@@ -43,6 +43,7 @@
                         ORDER BY 1,2;
                         <sql:param>${param.schema}</sql:param>
                         <sql:param>${param.table}</sql:param>
+                    </sql:query>
 			<c:forEach items="${tables.rows}" var="row" varStatus="rowCounter">
 				<form action="comment_schema.jsp">
                     <input type="hidden" name="schema" value="${param.schema}">
